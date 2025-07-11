@@ -1,0 +1,422 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+@layer base {
+  :root {
+    
+    /* Light theme (default) with blue and orange accents */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Blue primary/accent color (#3b82f6) */
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Orange secondary color (#f97316) */
+    --secondary: 24.6 95% 53.1%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217.2 91.2% 59.8%;
+
+    /* SurferSEO-inspired medium border radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Blue primary/accent color in dark mode */
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Orange secondary color in dark mode */
+    --secondary: 24.6 95% 53.1%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    /* Font is now applied via Next.js font loading in layout.tsx */
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Font is now applied via Next.js font loading in layout.tsx */
+  }
+}
+
+@layer base {
+  /* Improved focus styles for keyboard users */
+  .using-keyboard :focus {
+    outline: 2px solid var(--accent) !important;
+    outline-offset: 2px !important;
+  }
+  
+  /* Hide focus outlines for mouse users but preserve for keyboard */
+  :focus:not(:focus-visible) {
+    outline: none !important;
+  }
+  
+  /* Screen-reader only class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Make screen-reader class focusable when focused */
+  .sr-only.focus:not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: var(--background);
+  }
+
+  .green-gradient-bg {
+    background: var(--background);
+  }
+  
+  /* Light grain texture for continental team photos to make AI images look more natural */
+  .continental-team .w-full.h-full.relative::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.1;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16;
+  }
+  
+  /* Video styles */
+  video {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* Section spacing consistency */
+  section + section {
+    margin-top: 0;
+  }
+  
+  /* Standardized section containers */
+  .zaigo-container {
+    @apply max-w-[1536px] mx-auto px-6 sm:px-8 lg:px-12;
+  }
+  
+  /* Standardized section spacing */
+  .zaigo-section {
+    @apply py-16 sm:py-20;
+  }
+  
+  /* Standardized card spacing */
+  .zaigo-card {
+    @apply p-6 sm:p-8;
+  }
+  
+  /* Enhanced text readability */
+  p {
+    line-height: 1.7;
+    max-width: 70ch;
+  }
+  
+  /* Standardized typography spacing */
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1.25em;
+  }
+  
+  /* Standard heading sizes with consistent semi-bold weight */
+  h1.zaigo-heading {
+    @apply text-4xl md:text-5xl leading-tight mb-8 sm:mb-10;
+  }
+  
+  h2.zaigo-heading {
+    @apply text-3xl mb-8 sm:mb-10;
+  }
+  
+  h3.zaigo-heading {
+    @apply text-xl mb-4 sm:mb-6;
+  }
+  
+  /* Maintain consistent semi-bold weight across all screen sizes */
+  
+  /* More breathing room for content blocks */
+  .grid {
+    @apply gap-6 sm:gap-8;
+  }
+  
+  /* Standardized button styles */
+  .zaigo-button {
+    @apply rounded-full py-3 px-8 transition-colors h-auto;
+  }
+  
+  /* Memory optimization styles */
+  
+  /* Optimize image quality based on device/network capabilities */
+  [data-save-data="true"] img, 
+  [data-low-end-device="true"] img, 
+  [data-network-limited="true"] img {
+    image-rendering: auto;
+    filter: brightness(1.02); /* Very slight brightness increase to mask quality reduction */
+  }
+  
+  /* Smooth fadeout for images about to be unloaded */
+  [data-memory-optimized="true"].fadeout {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+  
+  /* Prevent layout shifts during memory optimization */
+  [data-memory-container="true"] {
+    /* Maintain size even when child element unloads */
+    min-height: 1rem;
+    position: relative;
+  }
+  
+  /* Apply specific optimizations based on declared optimization level */
+  [data-optimization-level="high"][data-memory-optimized="true"]:not(:is(:hover, :focus)) {
+    /* More aggressive optimizations for high optimization level */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    will-change: auto; /* Reset will-change when not in use */
+  }
+  
+  /* Prepare animation state before element visibility changes */
+  @keyframes memory-optimize-prepare {
+    from {
+      will-change: contents, transform;
+    }
+    to {
+      will-change: contents, transform;
+    }
+  }
+  
+  /* Apply animation only in visible state to hint browser */
+  [data-memory-optimized="true"]:is(:visible) {
+    animation: memory-optimize-prepare 10ms;
+  }
+  
+  /* Grid pattern for subtle background texture */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .dark .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+  
+  /* Infinite scroll animation for logo carousel */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+  
+  /* Pause on hover */
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+  
+  /* Stepped scroll animation with pauses - moves one item at a time */
+  /* Each step moves by (280px + 16px gap) = 296px */
+  @keyframes scroll-pause {
+    0%, 11% {
+      transform: translateX(0);
+    }
+    12.5%, 23.5% {
+      transform: translateX(-296px);
+    }
+    25%, 36% {
+      transform: translateX(-592px);
+    }
+    37.5%, 48.5% {
+      transform: translateX(-888px);
+    }
+    50%, 61% {
+      transform: translateX(-1184px);
+    }
+    62.5%, 73.5% {
+      transform: translateX(-1480px);
+    }
+    75%, 86% {
+      transform: translateX(-1776px);
+    }
+    87.5%, 98.5% {
+      transform: translateX(-2072px);
+    }
+    100% {
+      transform: translateX(-2368px);
+    }
+  }
+  
+  .animate-scroll-pause {
+    animation: scroll-pause 24s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  
+  /* Pause on hover */
+  .animate-scroll-pause:hover {
+    animation-play-state: paused;
+  }
+  
+  /* 3D Button shimmer animation */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) skewX(12deg);
+    }
+    100% {
+      transform: translateX(200%) skewX(12deg);
+    }
+  }
+
+
+  /* Logo white filter for dark backgrounds */
+  .logo-white {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  }
+
+  /* Remove navigation menu trigger backgrounds */
+  .NavigationMenuTrigger,
+  button[data-radix-collection-item] {
+    background: transparent !important;
+  }
+  
+  .NavigationMenuTrigger:hover,
+  button[data-radix-collection-item]:hover {
+    background: transparent !important;
+    opacity: 0.8;
+  }
+  
+  /* Navigation dropdown styling */
+  .NavigationMenuContent {
+    margin-top: 0.5rem;
+  }
+  
+  /* Animated gradient border animation */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Shine border animation */
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+  
+  .animate-shine {
+    animation: shine var(--duration) infinite linear;
+  }
+  
+  /* Gradient animation for text */
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+  
+  /* Slow spin animation */
+  .animate-spin-slow {
+    animation: spin 10s linear infinite;
+  }
+}

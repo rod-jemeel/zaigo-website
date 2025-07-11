@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/*
+Disallow: /health
+Disallow: /health-check.html
+
+# Host
+Host: https://zaigo.ai
+
+# Sitemaps
+Sitemap: https://zaigo.ai/sitemap.xml
+Sitemap: https://zaigo.ai/server-sitemap.xml

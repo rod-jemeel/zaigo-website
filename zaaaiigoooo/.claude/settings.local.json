@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__notionApi__API-post-search",
+      "mcp__notionApi__API-retrieve-a-page",
+      "mcp__notionApi__API-get-block-children",
+      "mcp__notionApi__API-get-self",
+      "Bash(rg:*)",
+      "WebFetch(domain:surferseo.com)",
+      "Bash(grep:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run lint:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(touch:*)",
+      "Bash(find:*)",
+      "Bash(rm:*)",
+      "mcp__notionApi__API-post-database-query",
+      "Bash(npm run dev:*)",
+      "Bash(ls:*)",
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(mv:*)",
+      "Bash(kill:*)",
+      "mcp__puppeteer__puppeteer_navigate",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "mcp__puppeteer__puppeteer_evaluate",
+      "Bash(npm ls:*)",
+      "Bash(npx shadcn@latest add \"https://21st.dev/r/aceternity/layout-grid\")",
+      "mcp__zen__thinkdeep",
+      "mcp__v0__v0_generate",
+      "Bash(mkdir:*)",
+      "mcp__zen__debug",
+      "Bash(claude mcp add:*)",
+      "mcp__figma-dev-mode-mcp-server__get_code",
+      "mcp__figma-dev-mode-mcp-server__get_image"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "notionApi",
+    "Context7"
+  ]
+}

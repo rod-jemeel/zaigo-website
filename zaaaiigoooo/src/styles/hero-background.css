@@ -1,0 +1,230 @@
+/* Hero Section Background Pattern */
+.hero-dot-pattern {
+  background-color: #1C52FF;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 96px 96px;
+  background-repeat: repeat;
+  border-radius: 1.5rem;
+  color: white;
+}
+
+/* Floating animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-5px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-15px) translateX(5px);
+  }
+  75% {
+    transform: translateY(15px) translateX(-5px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(20px) translateX(-10px);
+  }
+  66% {
+    transform: translateY(-10px) translateX(5px);
+  }
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(15px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(5px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-float-slow-reverse {
+  animation: float-slow-reverse 9s ease-in-out infinite;
+}
+
+/* Flow path animations */
+@keyframes flow-path {
+  0% {
+    stroke-dasharray: 0 1000;
+  }
+  100% {
+    stroke-dasharray: 1000 0;
+  }
+}
+
+.animate-flow-path {
+  animation: flow-path 20s linear infinite;
+}
+
+.animate-flow-path-delayed {
+  animation: flow-path 20s linear 2s infinite;
+}
+
+/* Spin animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+/* Drift animations */
+@keyframes drift-right {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes drift-left {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes drift-right-slow {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.15;
+  }
+  95% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+.animate-drift-right {
+  animation: drift-right 15s ease-in-out infinite;
+}
+
+.animate-drift-left {
+  animation: drift-left 12s ease-in-out infinite;
+}
+
+.animate-drift-right-slow {
+  animation: drift-right-slow 20s ease-in-out 3s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Float with tilt animations */
+@keyframes float-tilt {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(-25deg);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px) rotate(-20deg);
+  }
+  75% {
+    transform: translateY(10px) translateX(-5px) rotate(-30deg);
+  }
+}
+
+@keyframes float-tilt-reverse {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(20deg);
+  }
+  25% {
+    transform: translateY(10px) translateX(-5px) rotate(15deg);
+  }
+  75% {
+    transform: translateY(-10px) translateX(5px) rotate(25deg);
+  }
+}
+
+.animate-float-tilt {
+  animation: float-tilt 6s ease-in-out infinite;
+}
+
+.animate-float-tilt-reverse {
+  animation: float-tilt-reverse 7s ease-in-out infinite;
+}

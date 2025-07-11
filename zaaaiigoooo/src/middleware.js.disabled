@@ -1,0 +1,25 @@
+import { NextResponse } from 'next/server';
+
+export function middleware(request) {
+  // Special handling for Netlify health checks
+  if (
+    request.nextUrl.pathname === '/.netlify/health' ||
+    request.nextUrl.pathname === '/health-check'
+  ) {
+    return new NextResponse('OK', {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/plain',
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
+      }
+    });
+  }
+
+  // Continue with normal request handling
+  return NextResponse.next();
+}
+
+// Configure to match specific health check paths
+export const config = {
+  matcher: ['/.netlify/health', '/health-check']
+};

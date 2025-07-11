@@ -1,0 +1,14 @@
+{
+  "name": "mcp-v0",
+  "version": "1.0.0",
+  "description": "MCP server for v0 API with conversation memory",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "dotenv": "^16.4.7"
+  }
+}

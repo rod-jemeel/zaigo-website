@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "notionApi": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer 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\", \"Notion-Version\": \"2022-06-28\" }"
+      }
+    },
+    "Context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    },
+    "lighthouse": {
+      "command": "npx",
+      "args": ["lighthouse-mcp"],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "v0": {
+      "command": "node",
+      "args": ["mcp-v0/index.js"],
+      "cwd": "/Users/peterenestrom/Desktop/Zaigo/zaaaiigoooo"
+    }
+  }
+}
